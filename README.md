@@ -1,6 +1,6 @@
 # Freelance Arena
 
-Welcome to Freelance Arena, the app designed for the Freelancing Club at [Your College Name]. This application is built using Kotlin and Firebase to streamline the management of club events, participant scores, and upcoming activities.
+Welcome to Freelance Arena, the app designed for the Freelancing Club at VIT Bhopal. This application is built using Kotlin and Firebase to streamline the management of club events, participant scores, and upcoming activities.
 
 ## Features to be implemented
 
