@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "573618251050",
+    "project_id": "freelancearena",
+    "storage_bucket": "freelancearena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573618251050:android:87435e52d6596125a6ea53",
+        "android_client_info": {
+          "package_name": "com.devdreamerx.freelancearena"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPjvwtB2K8N9YYm8ZJ1KbT411MVNtci0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

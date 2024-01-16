@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FreelanceArena" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/moderate_pink</item>
+        <item name="colorPrimaryVariant">@color/dark_pink</item>
+        <item name="colorOnPrimary">@color/light_pink</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_blue</item>
+        <item name="colorSecondaryVariant">@color/moderate_blue</item>
+        <item name="colorOnSecondary">@color/light_blue</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/moderate_pink</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
