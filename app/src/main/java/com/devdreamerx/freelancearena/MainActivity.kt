@@ -1,20 +1,24 @@
 package com.devdreamerx.freelancearena
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.devdreamerx.freelancearena.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.light_blue)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.moderate_blue)
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -52,6 +56,8 @@ class MainActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
+        updateRegistrationNumber()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -63,5 +69,40 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun updateRegistrationNumber() {
+        // Fetch the user's registration number from Firestore and update the TextView
+        // Use similar code as in HomeFragment but with direct access to the TextView
+        val usersCollection = FirebaseFirestore.getInstance().collection("users")
+        val currentUserUid = mAuth.currentUser?.uid ?: ""
+
+        usersCollection.document(currentUserUid).get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    val email = documentSnapshot.getString("email") ?: ""
+                    val regNumber = convertDummyEmailToIdentifier(email)
+                    updateNavHeaderRegistrationNumber(regNumber)
+                } else {
+                    Log.e("MainActivity", "User document does not exist")
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("MainActivity", "Error fetching user registration number: ${e.message}")
+            }
+    }
+
+    private fun updateNavHeaderRegistrationNumber(regNumber: String) {
+        val navView: NavigationView = binding.navView
+        val headerView: View = navView.getHeaderView(0)
+        val regNumberTextView: TextView = headerView.findViewById(R.id.regNumber)
+        regNumberTextView.text = regNumber
+    }
+
+    private fun convertDummyEmailToIdentifier(dummyEmail: String): String {
+        // Extract the student identifier from the email and convert to uppercase
+        val parts = dummyEmail.split("@")
+        val identifier = parts[0]
+        return identifier.uppercase(Locale.getDefault())
     }
 }
