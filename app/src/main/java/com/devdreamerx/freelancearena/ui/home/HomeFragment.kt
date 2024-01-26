@@ -54,6 +54,8 @@ class HomeFragment : Fragment() {
             }
     }
 
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         // Set the binding reference to null to avoid potential memory leaks

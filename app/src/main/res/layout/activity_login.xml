@@ -5,15 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_blue"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:theme="@style/Theme.Material3.Light.NoActionBar">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="ScrollViewSize">
 
         <RelativeLayout
+            android:id="@+id/topRelativeLayout"
             android:layout_width="match_parent"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="120dp"
             android:layout_height="match_parent"
             android:padding="5dp">
 
@@ -26,7 +30,8 @@
                 android:textColor="@color/black"
                 android:textAlignment="center"
                 android:layout_centerHorizontal="true"
-                android:text="We Missed You !!"/>
+                android:text="We Missed You !!"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/edtEmailLogin"
@@ -45,7 +50,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textColorHint="#3F6275"
-                android:textSize="14dp" />
+                android:textSize="14sp"
+                tools:ignore="HardcodedText,TextFields" />
 
             <EditText
                 android:id="@+id/edtPasswordLogin"
@@ -55,14 +61,15 @@
                 android:layout_marginEnd="60dp"
                 android:background="@drawable/edt_text_bg"
                 android:padding="15dp"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textColor="@color/black"
                 android:textColorHint="#3F6275"
                 android:layout_below="@id/edtEmailLogin"
                 android:layout_height="wrap_content"
                 android:elevation="20dp"
                 android:hint="Enter Your Password"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                tools:ignore="Autofill,HardcodedText" />
 
             <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/btnLogin"
@@ -81,7 +88,7 @@
                 android:layout_marginStart="120dp"
                 android:layout_marginEnd="120dp"
                 android:layout_marginTop="20dp"
-                />
+                tools:ignore="HardcodedText" />
             <LinearLayout
                 android:id="@+id/LoginLLM"
                 android:layout_width="wrap_content"
@@ -97,7 +104,8 @@
                     android:text="Not Registered ?"
                     android:textColor="@color/black"
                     android:textSize="15sp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/LoginBtn"
@@ -106,7 +114,8 @@
                     android:textSize="15sp"
                     android:layout_marginStart="7dp"
                     android:text="Sign Up"
-                    android:textColor="#0037AC"/>
+                    android:textColor="#0037AC"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -132,7 +141,8 @@
                     android:textSize="13sp"
                     android:text="Or continue with"
                     android:textColor="@color/black"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    tools:ignore="HardcodedText" />
 
                 <View
                     android:layout_width="75dp"
@@ -158,6 +168,7 @@
                     <ImageButton
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:importantForAccessibility="no"
                         android:stateListAnimator="@animator/click_animation"
                         android:background="@drawable/img_2"/>
                 </androidx.cardview.widget.CardView>
@@ -170,6 +181,7 @@
                     <ImageButton
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:importantForAccessibility="no"
                         android:stateListAnimator="@animator/click_animation"
                         android:background="@drawable/img_5"/>
                 </androidx.cardview.widget.CardView>
@@ -182,11 +194,26 @@
                     <ImageButton
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:importantForAccessibility="no"
                         android:stateListAnimator="@animator/click_animation"
                         android:background="@drawable/img_13"/>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
+            
         </RelativeLayout>
+        
+        <ImageButton
+            android:id="@+id/switchDarkLightMode"
+            android:layout_width="50dp"
+            android:layout_gravity="end"
+            android:importantForAccessibility="no"
+            android:src="@drawable/moon"
+            android:background="@drawable/switch_btn_bg"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="15dp"
+            android:padding="10dp"/>
 
     </LinearLayout>
 

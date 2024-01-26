@@ -7,14 +7,22 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/speed"
-            android:title="Freelance Arena Score"/>
+            android:title="@string/freelance_arena_score"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/event"
-            android:title="Upcoming Events" />
+            android:id="@+id/nav_aboutus"
+            android:icon="@drawable/windsock"
+            android:title="@string/about_us"/>
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/night"
-            android:title="Switch to dark mode" />
+            android:icon="@drawable/event"
+            android:title="@string/upcoming_events" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/qricon"
+            android:title="@string/qr_message" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/feedback"
+            android:title="@string/feedback"/>
     </group>
 </menu>

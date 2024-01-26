@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/speed"
+            android:title="@string/freelance_arena_score"/>
+        <item
+            android:id="@+id/nav_aboutus"
+            android:icon="@drawable/windsock"
+            android:title="@string/about_us"/>
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/event"
+            android:title="@string/upcoming_events" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/qricon"
+            android:title="@string/qr_message" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/feedback"
+            android:title="@string/feedback"/>
+    </group>
+</menu>
