@@ -10,13 +10,82 @@
     <LinearLayout
         android:id="@+id/homeRootLLM"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingStart="15dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="15dp"
+            android:orientation="horizontal"
+            android:outlineAmbientShadowColor="@color/moderate_blue"
+            tools:ignore="DisableBaselineAlignment,UnusedAttribute">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:importantForAccessibility="no"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="start"
+                    android:src="@drawable/logo_black"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="end"
+                    android:importantForAccessibility="no"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/vitlogo_dark"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_margin="15dp"
+            app:cardElevation="20dp"
+            android:layout_height="50dp"
+            app:cardBackgroundColor="@color/moderate_blue"
+            app:cardPreventCornerOverlap="true"
+            app:cardCornerRadius="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stats"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:fontFamily="@font/allerta_stencil"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_margin="15dp"
-            app:cardElevation="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:fadingEdgeLength="20dp"
+            app:cardElevation="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/moderate_blue"
             app:cardPreventCornerOverlap="true"
@@ -32,7 +101,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Overall Score"
+                    android:text="@string/overall_score"
                     android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="18sp"
@@ -43,18 +112,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="35dp"
                         android:layout_height="35dp"
+                        android:importantForAccessibility="no"
                         android:src="@drawable/speed"/>
 
                     <TextView
                         android:id="@+id/actualScoreHome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$Score"
+                        tools:text="currentScore"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:layout_marginStart="8dp"
@@ -62,9 +133,6 @@
                         android:layout_gravity="center"/>
 
                 </LinearLayout>
-
-
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

@@ -8,7 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="statusBarSplash">#131313</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="dark_blue">#535878</color>
+    <color name="dark_background">#1D1E27</color>
+    <color name="dark_blue">#26435C</color>
     <color name="moderate_blue">#9DB0CE</color>
     <color name="light_blue">#B8D8E3</color>
     <color name="light_pink">#FEE1DD</color>

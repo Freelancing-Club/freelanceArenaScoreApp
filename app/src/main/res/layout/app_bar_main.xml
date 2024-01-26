@@ -9,14 +9,14 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.FreelanceArena.AppBarOverlay">
+        android:theme="@style/Theme.Material3.DynamicColors.Light">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/moderate_blue"
-            app:popupTheme="@style/Theme.FreelanceArena.PopupOverlay" />
+            android:background="@color/light_blue"
+            app:popupTheme="@style/Theme.Material3.DynamicColors.Light"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -28,7 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
+        app:backgroundTint="@color/moderate_blue"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:importantForAccessibility="no"
+        android:src="@drawable/moon"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
